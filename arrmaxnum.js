@@ -23,8 +23,8 @@ rl.question("Enter numbers separated by space: ", (input) => {
     if (input.length === 0) {
         throw new Error("please enter some numbers")
     }
-
-    let arr = input.split(" ").map(Number)   // convert input to array of numbers
+    const arr = input.split(' ').map(Number)
+      // convert input to array of numbers
 
     console.log("Maximum number:", arrmaxnum(arr))
 

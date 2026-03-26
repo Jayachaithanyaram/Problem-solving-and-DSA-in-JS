@@ -10,6 +10,11 @@ function tipamount(totalamount, tippercent) {
         let tip = (totalamount * tippercent[i]) / 100
         result.push(tip)
     }
+    const formatter  = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+    });
+    result = result.map(tip => formatter.format(tip))
     return result
 }
 rl.question("Enter total amount: ", (total) => {
