@@ -20,7 +20,7 @@ function pattern(n) {
         for (let j = 1; j <= i; j++) {
             res += start
             start = 1 - start
-        }
+        } 
         console.log(res)
     }
 }
