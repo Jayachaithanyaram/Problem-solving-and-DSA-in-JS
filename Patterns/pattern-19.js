@@ -59,3 +59,4 @@ rl.question("Enter rows :", n => {
     pattern(Number(n));
     rl.close();
 })
+// enter rows : 5
