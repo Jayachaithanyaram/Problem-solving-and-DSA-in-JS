@@ -5,15 +5,6 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 // Parametarised way
-// function sumOfNumbers(i, n) {
-
-//     if (i > n) {
-//         return 0;
-//     }
-//     return i + sumOfNumbers(i + 1, n)
-// }
-
-// Type 2
 
 function sumOfNumbers(i, sum) {
 
@@ -28,3 +19,13 @@ rl.question("Enter n: ", (n) => {
     sumOfNumbers(Number(n),0)
     rl.close();
 });
+
+// function sumOfNumbers(i, n) {
+
+//     if (i > n) {
+//         return 0;
+//     }
+//     return i + sumOfNumbers(i + 1, n)
+// }
+
+// Type 2
