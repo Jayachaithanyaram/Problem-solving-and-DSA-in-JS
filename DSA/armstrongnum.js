@@ -18,3 +18,4 @@ rl.question("Enter a number :", n => {
     console.log(armstrongnum(Number(n)))
     rl.close();
 })
+//  try 371
