@@ -5,16 +5,16 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-function printName(i, n) {
+function printNumLinearly(i, n) {
 
     if (i < 1) {
         return;
     }
-    printName(i - 1, n);
+    printNumLinearly(i - 1, n);
     console.log(i);
 }
 
 rl.question("Enter n: ", (n) => {
-    printName(n, Number(n));
+    printNumLinearly(n, Number(n));
     rl.close();
 });

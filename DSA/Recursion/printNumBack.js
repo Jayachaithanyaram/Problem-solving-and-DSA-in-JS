@@ -5,7 +5,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-function printName(i, n) {
+function printNumBack(i, n) {
 
     if (i > n) {
         return;
@@ -14,10 +14,10 @@ function printName(i, n) {
     console.log(n);
 
 
-    printName(i, n - 1);
+    printNumBack(i, n - 1);
 }
 
 rl.question("Enter n: ", (n) => {
-    printName(1, Number(n));
+    printNumBack(1, Number(n));
     rl.close();
 });
