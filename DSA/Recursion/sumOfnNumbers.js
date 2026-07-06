@@ -20,12 +20,3 @@ rl.question("Enter n: ", (n) => {
     rl.close();
 });
 
-// function sumOfNumbers(i, n) {
-
-//     if (i > n) {
-//         return 0;
-//     }
-//     return i + sumOfNumbers(i + 1, n)
-// }
-
-// Type 2
