@@ -13,7 +13,7 @@ const rl = readline.createInterface({
 })
 function pattern(n) {
     for (let i = 0; i < n; i++) {
-        let res = "";
+        let res = "";   
         for (let j = 0; j < n - i - 1; j++) {
             res += " ";
         }
@@ -21,7 +21,7 @@ function pattern(n) {
             res += "*"
         }
         for (let j = 0; j < n - i - 1; j++) {
-            res += " "; 
+            res += " ";
         }
         console.log(res)
     }
