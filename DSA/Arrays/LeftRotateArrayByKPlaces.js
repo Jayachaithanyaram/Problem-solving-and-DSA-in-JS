@@ -38,4 +38,4 @@ function leftRotateArrayByKPlaces(arr, k) {
     return arr;
 }
 
-console.log(leftRotateArrayByKPlaces([1, 2, 3, 4, 5, 6, 7], 5));
+    console.log(leftRotateArrayByKPlaces([1, 2, 3, 4, 5, 6, 7], 5));
