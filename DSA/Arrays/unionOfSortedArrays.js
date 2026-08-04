@@ -1,7 +1,6 @@
 // Brute Force method
 function unionOfSortedArrays(arr1, arr2) {
     let set1 = new Set(arr1)
-    let set2 = new Set()
     for (let nums of arr2) {
         set1.add(nums)
     }
