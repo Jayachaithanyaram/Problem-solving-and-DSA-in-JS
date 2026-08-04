@@ -1,6 +1,6 @@
 function movingZeroesToEnd(arr) {
     let j = -1
-    for (let i = 0; j < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         if (arr[i] == 0) {
             j = i
             break;
@@ -9,7 +9,7 @@ function movingZeroesToEnd(arr) {
     for (let i = j + 1; i < arr.length; i++) {
         if (arr[i] != 0) {
             [arr[j], arr[i]] = [arr[i], arr[j]]
-            j++  
+            j++
         }
 
     }
