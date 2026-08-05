@@ -16,3 +16,14 @@ function FindMissingNumber(arr, N) {
 }
 console.log(FindMissingNumber([1, 2, 4, 5], 5))
 
+// Better Solution
+function FindMissingNumber1(arr, N) {
+    let set = new Set(arr)
+    for (let i = 1; i < N; i++) {
+        if (!set.has(i)) {
+            return i
+        }
+    }
+}
+console.log(FindMissingNumber1([1, 2, 4, 5], 5))
+
