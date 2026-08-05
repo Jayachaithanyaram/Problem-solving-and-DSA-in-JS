@@ -43,3 +43,17 @@ function missingNumber(arr, n) {
     }
 }
 console.log(missingNumber([1, 2, 4, 5], 5));
+//
+// Optimal Solution
+function FindMissingNum(arr, N) {
+    let xor1 = 0
+    let xor2 = 0
+    let n = N - 1
+    for (let i = 0; i < n; i++) {
+        xor2 = xor2 ^ arr[i]
+        xor1 = xor1 ^ (i + 1)
+    }
+    xor1 = xor1 ^ N
+    return xor1 ^ xor2
+}
+console.log(FindMissingNum([1, 2, 4, 5], 5))
