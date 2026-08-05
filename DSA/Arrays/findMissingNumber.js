@@ -27,3 +27,19 @@ function FindMissingNumber1(arr, N) {
 }
 console.log(FindMissingNumber1([1, 2, 4, 5], 5))
 
+// Using Hashing
+function missingNumber(arr, n) {
+
+    let hash = new Array(n + 1).fill(0);
+
+    for (let num of arr) {
+        hash[num] = 1;
+    }
+
+    for (let i = 1; i <= n; i++) {
+        if (hash[i] === 0) {
+            return i;
+        }
+    }
+}
+console.log(missingNumber([1, 2, 4, 5], 5));
