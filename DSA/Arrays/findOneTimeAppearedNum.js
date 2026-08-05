@@ -41,10 +41,20 @@ function findOneTimeAppearedNum2(arr) {
     for (let num of arr) {
         map.set(num, (map.get(num) || 0) + 1)
     }
-    for(let [key,value] of map){
-        if(value ==1){
+    for (let [key, value] of map) {
+        if (value == 1) {
             return key
         }
     }
 }
 console.log(findOneTimeAppearedNum2([1, 1, 2, 3, 3, 4, 4, 5, 5]))
+
+// Xor solution
+function findOneTimeAppearedNum3(arr) {
+let xor = 0
+for(let i =0;i<arr.length;i++){
+    xor = xor ^ arr[i]
+}
+return xor
+}
+console.log(findOneTimeAppearedNum3([1, 1, 2, 3, 3, 4, 4, 5, 5]))
