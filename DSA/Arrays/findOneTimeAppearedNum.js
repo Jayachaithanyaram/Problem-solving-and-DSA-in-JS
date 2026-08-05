@@ -34,3 +34,17 @@ function findOneTimeAppearedNum1(arr) {
     }
 }
 console.log(findOneTimeAppearedNum1([1, 1, 2, 3, 3, 4, 4, 5, 5]))
+
+// Optimal Solution
+function findOneTimeAppearedNum2(arr) {
+    let map = new Map()
+    for (let num of arr) {
+        map.set(num, (map.get(num) || 0) + 1)
+    }
+    for(let [key,value] of map){
+        if(value ==1){
+            return key
+        }
+    }
+}
+console.log(findOneTimeAppearedNum2([1, 1, 2, 3, 3, 4, 4, 5, 5]))
