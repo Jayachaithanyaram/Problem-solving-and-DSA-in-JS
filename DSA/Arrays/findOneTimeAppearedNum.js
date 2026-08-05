@@ -17,3 +17,20 @@ function findOneTimeAppearedNum(arr) {
 }
 console.log(findOneTimeAppearedNum([1, 1, 2, 3, 3, 4, 4, 5, 5]))
 
+// Better Solution
+function findOneTimeAppearedNum1(arr) {
+    let max = 0
+    for (let num of arr) {
+        max = Math.max(max, num)
+    }
+    let hash = new Array(max).fill(0)
+    for (let num of arr) {
+        hash[num]++
+    }
+    for (let num of arr) {
+        if (hash[num] == 1) {
+            return num
+        }
+    }
+}
+console.log(findOneTimeAppearedNum1([1, 1, 2, 3, 3, 4, 4, 5, 5]))
