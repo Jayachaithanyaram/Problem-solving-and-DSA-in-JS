@@ -15,3 +15,16 @@ function majorityElement(arr) {
 }
 console.log(majorityElement([2, 2, 1, 3, 3, 2, 2]))
 
+//  Solution using Hashmap
+function majorityElement1(arr) {
+    let map = new Map()
+    for (let num of arr) {
+        map.set(num, (map.get(num) || 0) + 1)
+    }
+    for (let [key, value] of map) {
+        if (value > (arr.length - 1) / 2) {
+            return value
+        }
+    }
+}
+console.log(majorityElement1([2, 2, 1, 3, 3, 2, 2]))
