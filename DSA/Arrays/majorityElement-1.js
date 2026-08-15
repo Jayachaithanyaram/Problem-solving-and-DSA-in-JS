@@ -7,7 +7,7 @@ function majorityElement(arr) {
                 count++
             }
             if (count > (arr.length - 1) / 2) {
-                return count
+                return arr[i]
             }
         }
     }
@@ -23,8 +23,28 @@ function majorityElement1(arr) {
     }
     for (let [key, value] of map) {
         if (value > (arr.length - 1) / 2) {
-            return value
+            return key
         }
     }
 }
 console.log(majorityElement1([2, 2, 1, 3, 3, 2, 2]))
+
+//  Boyer-Moore voting Algorithm
+function majorityElement1(arr) {
+    let candidate = null
+    let count = 0
+    for (let num of arr) {
+        if (count === 0) {
+            candidate = num;
+        }
+
+        if (num == candidate) {
+            count++
+        } else {
+            count--
+        }
+    }
+    return candidate
+
+}
+console.log(majorityElement1([2, 2, 1, 1, 1, 1, 1, 2, 2]))
