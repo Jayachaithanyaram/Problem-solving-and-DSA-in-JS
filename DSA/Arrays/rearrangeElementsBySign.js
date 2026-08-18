@@ -10,12 +10,24 @@ function rearrangeElementsBySign(arr) {
         }
     }
     for (let i = 0; i < (arr.length) / 2; i++) {
-        arr[2 * i] = posArr[i]
-        arr[2 * i + 1] = negArr[i]
+        if (!posArr[i]) {
+            arr[2 * i + 1] = negArr[i]
+        } else {
+
+            arr[2 * i] = posArr[i]
+        }
+        if (!negArr[i]) {
+            arr[2 * i] = posArr[i]
+        } else {
+            arr[2 * i + 1] = negArr[i]
+        }
     }
     return arr
 }
 console.log(rearrangeElementsBySign([3, 1, -2, -5, 2, -4]))
+console.log(rearrangeElementsBySign([-1, 2, 3, 4, -3, 1]))
+console.log(rearrangeElementsBySign([-1, -2, -3, 4, -3, 1]))
+
 
 // Better Solution
 function rearrangeElementsBySign1(arr) {
