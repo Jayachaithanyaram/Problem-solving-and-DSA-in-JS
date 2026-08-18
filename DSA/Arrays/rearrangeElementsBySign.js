@@ -13,7 +13,6 @@ function rearrangeElementsBySign(arr) {
         if (!posArr[i]) {
             arr[2 * i + 1] = negArr[i]
         } else {
-
             arr[2 * i] = posArr[i]
         }
         if (!negArr[i]) {
