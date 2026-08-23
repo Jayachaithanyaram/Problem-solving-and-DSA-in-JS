@@ -42,3 +42,36 @@ let result = setMatrixZeroes([
 for (let row of result) {
     console.log(row.join(" "))
 }
+
+// Better Solution
+function setMatrixZeroes1(matrix) {
+    let m = matrix.length
+    let n = matrix[0].length
+    let row = new Array(m).fill(false)
+    let col = new Array(n).fill(false)
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (matrix[i][j] == 0) {
+                row[i] = true
+                col[j] = true
+            }
+        }
+    }
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (row[i] || col[j]) { 
+                matrix[i][j] = 0
+            }
+        }
+    }
+    return matrix
+}
+let result1 = setMatrixZeroes1([
+    [1, 1, 1],
+    [1, 0, 1],
+    [1, 1, 1]
+])
+
+for (let row of result1) {
+    console.log(row.join(" "))
+}
