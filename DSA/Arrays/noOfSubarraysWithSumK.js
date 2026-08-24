@@ -31,3 +31,20 @@ function noOfSubarraysWithSumK1(arr, k) {
     return count
 }
 console.log(noOfSubarraysWithSumK1([1, 2, 3, -3, 1, 1, 1, 4, 2, -3], 3))
+
+// Optimal Solution
+function noOfSubarraysWithSumK2(arr, k) {
+    let map = new Map();
+    map.set(0, 1)
+    let sum = 0;
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        let rem = sum - k;
+        count += map.get(rem) || 0
+        map.set(sum, (map.get(sum) || 0) + 1)
+    }
+
+    return count
+}
+console.log(noOfSubarraysWithSumK2([1, 2, 3, -3, 1, 1, 1, 4, 2, -3], 3))
