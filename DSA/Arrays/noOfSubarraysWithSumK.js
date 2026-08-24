@@ -14,5 +14,20 @@ function noOfSubarraysWithSumK(arr, k) {
     }
     return count
 }
-
 console.log(noOfSubarraysWithSumK([1, 2, 3, -3, 1, 1, 1, 4, 2, -3], 3))
+
+//  Better solution
+function noOfSubarraysWithSumK1(arr, k) {
+    let count = 0
+    for (let i = 0; i < arr.length; i++) {
+        let sum = 0
+        for (let j = i; j < arr.length; j++) {
+            sum += arr[j]
+            if (sum == k) {
+                count++
+            }
+        }
+    }
+    return count
+}
+console.log(noOfSubarraysWithSumK1([1, 2, 3, -3, 1, 1, 1, 4, 2, -3], 3))
