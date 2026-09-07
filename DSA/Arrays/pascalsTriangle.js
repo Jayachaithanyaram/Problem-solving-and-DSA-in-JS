@@ -18,3 +18,14 @@ function pascalsTriangle(r, c) {
     return result
 }
 console.log(pascalsTriangle(5, 3))
+
+// Optimized brute force solution
+function pascalsTriangle1(n, r) {
+    let res = 1
+    for (let i = 0; i <r; i++) {
+        res *= (n - i)
+        res /= (i+1)
+    }
+    return res
+}
+console.log(pascalsTriangle1(4,2))
