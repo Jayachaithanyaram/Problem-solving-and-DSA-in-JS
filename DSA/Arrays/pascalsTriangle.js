@@ -59,7 +59,7 @@ function ncr1(n) {
 ncr1(6)
 
 
-Brute force solution for printing the entire pascals triangle
+// Brute force solution for printing the entire pascals triangle
 function ncr(n, r) {
     let ans = 1
     for (let i = 0; i < r; i++) {
