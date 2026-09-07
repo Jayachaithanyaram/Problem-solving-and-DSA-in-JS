@@ -45,3 +45,15 @@ function pascalsTriangle2(n) {
     }
 }
 pascalsTriangle2(6)
+
+// optimized solution for printing the entire elements in a row
+function ncr(n) {
+    let ans = 1
+    console.log(ans)
+    for (let i = 1; i < n; i++) {
+        ans *= (n - i)
+        ans /= i
+        console.log(ans)
+    }
+}
+ncr(6)
