@@ -33,12 +33,17 @@ console.log(majorityElement2([1, 1, 1, 3, 3, 2, 2, 2]))
 
 // Optimal Solution
 function majorityelement3(arr) {
+
     let size = arr.length
+
     let count1 = 0
     let count2 = 0
-    let ele1;
-    let ele2;
+
+    let ele1
+    let ele2
+
     for (let i = 0; i < size; i++) {
+
         if (count1 == 0 && arr[i] != ele2) {
             count1 = 1
             ele1 = arr[i]
@@ -58,6 +63,30 @@ function majorityelement3(arr) {
             count2--
         }
     }
-    return [ele1, ele2]
+    count1 = 0
+    count2 = 0
+
+    for (let i = 0; i < size; i++) {
+
+        if (arr[i] == ele1) {
+            count1++
+        }
+        else if (arr[i] == ele2) {
+            count2++
+        }
+    }
+
+        let res = []
+
+        if (count1 > size / 3) {
+            res.push(ele1)
+        }
+
+        if (count2 > size / 3) {
+            res.push(ele2)
+        }
+
+        return res
 }
+
 console.log(majorityelement3([1, 1, 1, 1, 3, 2, 2, 2]))
