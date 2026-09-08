@@ -15,3 +15,18 @@ function majorityElement(arr) {
     return res
 }
 console.log(majorityElement([1, 1, 1, 3, 3, 2, 2, 2]))
+
+// Better Solution
+function majorityElement2(arr) {
+    let map = new Map()
+    let res = []
+    let min = Math.floor(arr.length / 3)
+    for (let i = 0; i < arr.length; i++) {
+        map.set(arr[i], (map.get(arr[i]) || 0) + 1)
+        if (map.get(arr[i]) == min + 1) {
+            res.push(arr[i])
+        }
+    }
+    return res
+}
+console.log(majorityElement2([1, 1, 1, 3, 3, 2, 2, 2]))
