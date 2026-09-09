@@ -13,10 +13,34 @@ function threeSum(arr) {
                         set.add(key)
                         res.push(triplet)
                     }
-            a    }
+                }
             }
         }
     }
     return res
 }
 console.log(threeSum([-1, 0, 1, 2, -1, -4]))
+
+// Better solution
+function threeSum1(arr) {
+    let res = []
+    let unique = new Set()
+    for (let i = 0; i < arr.length; i++) {
+        let set = new Set()
+        for (let j = i + 1; j < arr.length; j++) {
+            let k = -(arr[i] + arr[j])
+            if (set.has(k)) {
+                let triplet = [arr[i], arr[j], k]
+                triplet.sort((a, b) => a - b)
+                let key = triplet.join(",")
+                if (!unique.has(key)) {
+                    unique.add(key)
+                    res.push(triplet)
+                }
+            }
+            set.add(arr[j])
+        }
+    }
+    return res
+}
+console.log(threeSum1([-1, 0, 1, 2, -1, -4]))
