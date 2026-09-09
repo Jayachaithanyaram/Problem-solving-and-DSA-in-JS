@@ -54,7 +54,6 @@ function threeSum2(arr) {
         }
         let j = i + 1
         let k = arr.length - 1
-
         while (j < k) {
             let sum = arr[i] + arr[j] + arr[k]
             if (sum < 0) {
@@ -69,7 +68,6 @@ function threeSum2(arr) {
                 while (j < k && arr[k] == arr[k + 1]) { k-- }
             }
         }
-
     }
     return res
 }
